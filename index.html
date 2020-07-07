@@ -16,15 +16,20 @@
     <body>
       <div class="main-wrapper">
         <header>
-          <div id="navbar-info" class="centratura">
-            <div class="link">
-              <a href="#">Personale</a>
-              <a href="#">Content</a>
+          <!-- <div class="square">  </div> -->
+          <div id="navbar-info-wrapper" class="show">
+            <div id="navbar-info" class="centratura">
+
+              <div class="link">
+                <a href="#">Personale</a>
+                <a href="#">Content</a>
+              </div>
+              <div class="link">
+                <a href="#">Azienda</a>
+                <a href="#">Aiuto</a>
+              </div>
             </div>
-            <div class="link">
-              <a href="#">Azienda</a>
-              <a href="#">Aiuto</a>
-            </div>
+
           </div>
           <div id="navbar-wrapper" class="navbar centratura">
 
@@ -35,10 +40,10 @@
                 </a>
               </div>
               <div id="navbar-link" class="">
-                <div class="link">
+                <div class="link show">
                   <div class="parent_dropdown">
                     <span>Denaro</span>
-                    <i class="hidden fas fa-chevron-down"></i>
+                    <i class="fas fa-chevron-down"></i>
                     <ul  class="dropdown hidden">
                       <li>
                         <a href="#">Invia Denaro all'Estero</a>
@@ -58,7 +63,7 @@
                 <div class="link">
                   <div class="parent_dropdown">
                     <span>Investimenti e risparmi</span>
-                    <i class="hidden fas fa-chevron-down"></i>
+                    <i class="fas fa-chevron-down"></i>
                     <ul  class="dropdown hidden">
                       <li>
                         <a href="#">Effettua compravendite di titoli azionari</a>
@@ -79,7 +84,7 @@
                 <div class="link">
                   <div class="parent_dropdown">
                     <span>Controllo</span>
-                    <i class="hidden fas fa-chevron-down"></i>
+                    <i class="fas fa-chevron-down"></i>
                     <ul  class="dropdown hidden">
                       <li>
                         <a href="#">Imposta i budget</a>
@@ -93,7 +98,7 @@
                 <div class="link">
                   <div class="parent_dropdown">
                     <span>Altro</span>
-                    <i class="hidden fas fa-chevron-down"></i>
+                    <i class="fas fa-chevron-down"></i>
                     <ul  class="dropdown hidden">
                       <li>
                         <a href="#">Assicura te stesso all'estero</a>
@@ -116,25 +121,33 @@
                 <div class="link">
                   <div class="parent_dropdown">
                     <span>Plans</span>
-                    <i class="hidden fas fa-chevron-down"></i>
+                    <i class="fas fa-chevron-down"></i>
                     <ul  class="dropdown hidden">
                       <li>
-                        <a href="#">Invia Denaro all'Estero</a>
+                        <a href="#">Standard</a>
                       </li>
                       <li>
-                        <a href="#">Effettua e ricevi Pagamenti Effettua e ricevi Pagamenti</a>
+                        <a href="#">Premium</a>
                       </li>
                       <li>
-                        <a href="#">Paga con ApplePay</a>
+                        <a href="#">Metal</a>
+                      </li>
+                      <li>
+                        <a href="#">Junior</a>
+                      </li>
+                      <li>
+                        <a href="#">Tariffazione</a>
                       </li>
                       <li></li>
                     </ul>
                   </div>
                 </div>
               </div> <!-- navbar-content flex menu -->
-              <div id="navbar-button" class="btn"> <!-- navbar-content flex button -->
+              <button id="navbar-button" class="btn" type="button" name="button">Scarica L'app</button>
+
+              <!-- <div id="navbar-button" class="btn">
                 <a href="#">Scarica L'app</a>
-              </div>
+              </div> -->
               <div id="hamburger-menu" class="">
                 <div class="hamb-line01"></div>
                 <div class="hamb-line02"></div>
@@ -144,16 +157,17 @@
           </div>
 
           <div id="jumbotron" class="centratura">
-            <div class="main">
+            <div class="heroSection1">
               <h1>Ottieni di piu dai tuoi fondi</h1>
               <p>Cambia denaro senza commissioni nascoste. Acquista Crypto e oro, oppure effettua una compravendita di azioni a partire da $ 1 e gestisci il tuo denaro con l'analisi della spesa. Unisciti a più di 10 milione di clienti Revolut.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <form class="form">
+                  <input type="text" value="+039">
+                  <input type="text" placeholder="Numero di telefono" value="">
+                  <button class="btn" type="button" name="button">Scarica L'app</button>
+                </form>
             </div>
-            <div class="image">
+            <div class="heroSection2">
               <img src="img/home.png" alt="home">
-
             </div>
 
           </div>

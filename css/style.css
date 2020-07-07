@@ -12,12 +12,6 @@ font-weight: normal;
 src: local('Basier Circle Regular'), url('../font/BasierCircle-Regular.woff') format('woff');
 }
 
-
-coloridaconfermare{
-  /* color: 	rgb(182, 176, 170); */
-  /* color:rgb(25, 28, 31); */
-}
-
 body{
   font-family: 'Roboto', sans-serif;
   color: 		rgb(172, 171, 172);
@@ -25,12 +19,23 @@ body{
 }
 
 h1{
+  margin-top: 80px;
   font-family: 'Basier Circle Regular';
   text-align: left;
   font-size: 76px;
   line-height: 87px;
-  color:rgb(25, 28, 31)
+  color:rgb(25, 28, 31);
+  font-weight: 900;
+  letter-spacing: -0.025em;
+}
 
+p{
+font-family: 'Roboto', sans-serif;
+font-size: 18px;
+line-height: 28px;
+margin-top: 1rem;
+text-align: left;
+color: rgb(139, 149, 158);
 }
 
 header a, header span{
@@ -48,8 +53,19 @@ header a, header span{
   display:none;
 }
 
+.show{
+  display: block;!important
+}
+
+.fa-chevron-down{
+  display:none;
+}
 
 /* fixed top navbar style */
+#navbar-info-wrapper{
+  display:block;
+}
+
 #navbar-info{
   width: 100%;
   height:64px;
@@ -118,14 +134,8 @@ header a, header span{
   align-items: center;
 }
 
-/* .carret:after{
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  content: "\f107";
-} */
-
 #navbar-link .link {
-  display: inline-block;
+  display: block;
 }
 
 #navbar-link .link:last-of-type {
@@ -144,44 +154,43 @@ header a, header span{
 
 #navbar-link .parent_dropdown>span{
   padding:30px 30px;
-
 }
 
-/* #navbar-link .link:nth-of-type(2) > .parent_dropdown>span{
-  color:rgb(25, 28, 31);
-} */
+#navbar-link .parent_dropdown>i{
+  display:none;
+}
 
-#navbar-link .link .dropdown{
+#navbar-link .dropdown{
   position: absolute;
   top:30px;
   left:-10px;
   list-style-type: none;
-  min-width: 200px;
   box-shadow: rgba(0, 0, 0, 0.04) 0px 0px 4px 0px, rgba(0, 0, 0, 0.08) 0px 8px 16px 0px;
   background-color: white;
   border-radius: 0.5rem;
   padding: 0.75rem 0px;
 }
 
-#navbar-link .link .dropdown > li{
+#navbar-link .dropdown > li>a{
 display: inline-block;
 white-space: nowrap; /* use this not to break the line */
 padding: 0.8rem 1.6rem;
 }
 
-
 /* Third Section---------Navbar-button */
-#navbar-button {
-  min-width:130px;
-}
 
-#navbar-button a{
+.btn{
   background-color: rgb(25, 28, 31);
+  font-size: 17px;
+  width:120px;
+  height:48px;
   color:white;
   font-weight: 600;
-  padding:18px;
   border-radius: 14px;
   transition: 0.1s;
+  letter-spacing: -1px;
+  outline: 0!important;
+  border:none;
 }
 
 .active {
@@ -195,17 +204,23 @@ padding: 0.8rem 1.6rem;
 #jumbotron{
   display: flex;
   justify-content: space-between;
-  padding-top: 180px;
+  width:100%;
+  padding-top: 120px;
 }
 
 #jumbotron img{
-  width:499;
-  height:610px;
+  width:480px;
+  height:auto;
 }
 
+.form{
+  margin-top: 30px;
+}
 
-
-
+input{
+  border:0;
+  border-bottom:1px solid blue;
+}
 
 /* ...HOVER....... */
 
@@ -213,90 +228,181 @@ header a:hover, header span:hover{
   color: rgb(25, 28, 31);
 }
 
+/* ----MEDIA QUERY------------------------------ */
+@media all and (max-width:1025px) {
 
+h1{
+  margin-top: 0px;
+  font-weight: 600;
+  font-size: 46px;
+  line-height: 56px;
+  text-align: center;
+}
 
-@media all and (max-width:1000px) {
+p{
+  font-size: 18px;
+  line-height: 28px;
+  margin-top: 1rem;
+  text-align: center;
+  color: rgb(139, 149, 158);
+}
 
+#navbar-info-wrapper{
+  display: none;
+}
 
-  #navbar-info{
-    position: fixed;
-    width: 100%;
-    height:96px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: rgb(172, 171, 172);
-    background-color: rgb(243, 244, 246);
-    z-index: 8;
+#navbar-info{
+  position: fixed;
+  width: 100%;
+  height:96px;
+  display: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgb(172, 171, 172);
+  background-color: rgb(243, 244, 246);
+  z-index: 11;
+}
+
+#navbar-info .link:last-of-type{
+  display:none;
+}
+
+/* fixed top navbar style */
+#navbar-wrapper{
+  position: static;
+  top:0;
+  left:0;
+  width: 100vw;
+  height: 128px;
+  padding-top:28px;
+  padding-bottom: 28px;
+  z-index: 9;
+  background-color: white;
+}
+
+#navbar-link{
+  position: fixed;
+  padding-top: 20px;
+  top:96px;
+  left:40px;
+  display: flex;
+  margin-left:0;
+  width:100%;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: white;
+}
+
+#navbar-link .link {
+  width: 100%;
+  display: none;
+}
+
+#navbar-link .link .parent_dropdown{
+  position:static;
+}
+
+#navbar-link .parent_dropdown>i{
+  padding-top: 12px;
+  font-size: 12px;
+  display:inline-block;
+  line-height: 1.65;
+}
+
+#navbar-link .parent_dropdown>span{
+  padding: 10px 30px;
+  display: inline-block;
+  width: 85%;
+  background-color: red;
+  line-height: 1.65;
+}
+
+#navbar-link .dropdown{
+  position: static;
+  box-shadow: none;
+  width: 100%;
+  background-color: white;
+  padding: 0.75rem 0px;
+}
+
+.fa-chevron-down{
+  display:block;
+}
+
+#hamburger-menu{
+  position: fixed;
+  right:40px;
+  top:30px;
+  width:30px;
+  height:30px;
+  background-color: lightgreen;
+  z-index: 1000;
+}
+
+.hamb-line01{
+  background-color: red;
+  position: absolute;
+  right:5px;
+  top:5px;
+  width:20px;
+  height:2px;
+  border-radius: 3px;
+}
+.hamb-line02{
+  background-color: red;
+  position: absolute;
+  right:5px;
+  top:14px;
+  width:20px;
+  height:2px;
+  border-radius: 3px;
+}
+
+/* Navbar-content contains all the navbar content divided in three Sections */
+#navbar-content{
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+#navbar-button{
+  position:fixed;
+  bottom:50px;
+  left:50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+#jumbotron{
+  display: flex;
+  flex-direction: column;
+  width:60%;
+  margin:0 auto;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0px;
+}
+
+#jumbotron img{
+  width:250px;
+  height:auto;
+}
+
+.square{
+  position: fixed;
+  z-index: 1000;
+  width:50px;
+  height:50px;
+  background-color: green;
+}
+
+@media all and (min-width:1026px) {
+
+  #navbar-link .link {
+    display: block!important;
   }
-
-  /* fixed top navbar style */
-  #navbar-wrapper{
-    position: fixed;
-    top:0;
-    left:0;
-    width: 100vw;
-    height: 128px;
-    padding-top:28px;
-    padding-bottom: 28px;
-    z-index: 10;
-    background-color: white;
-  }
-
-  #hamburger-menu{
-    position: relative;
-    right:0px;
-    top:0px;
-    width:30px;
-    height:30px;
-    z-index: 999;
-  }
-  .hamb-line01{
-    background-color: red;
-    position: absolute;
-    right:5px;
-    top:5px;
-    width:20px;
-    height:2px;
-    border-radius: 3px;
-  }
-  .hamb-line02{
-    background-color: red;
-    position: absolute;
-    right:5px;
-    top:14px;
-    width:20px;
-    height:2px;
-    border-radius: 3px;
-  }
-
-  /* Navbar-content contains all the navbar content divided in three Sections */
-  #navbar-content{
-    width:100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
-
-
-  #navbar-link{
-    display: flex;
-    margin-left:0;
-    width:100%;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
-
-
-
-  #navbar-button{
-    position:fixed;
-    bottom:50px;
-    left:50%;
-    transform: translateX(-50%);
-    z-index: 10;
-  }
-
 }

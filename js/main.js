@@ -9,22 +9,46 @@ console.log(dropdown);
 
 var dropdown_items = $('#navbar-content .dropdown > li').children();
 console.log(dropdown_items);
-//
+
+var width = $('header').width();
+
 parent_dropdown.on('mouseenter', function() {//when mouse over the class parent_dropdown
-  $(this).children('.dropdown').addClass('active');
-  $(this).children('.dropdown').removeClass('hidden'); //make the dropdown of this element visible
-})
+  if (width>1025) {
+    $(this).children('.dropdown').addClass('active');
+    $(this).children('.dropdown').removeClass('hidden'); //make the dropdown of this element visible
+  }
+});
+
+
 
 parent_dropdown.on('mouseleave', function() {//when mouse over the class parent_dropdown
-  $(this).children('.dropdown').removeClass('active');
-  $(this).children('.dropdown').addClass('hidden'); //make the dropdown of this element visible
+  if ($(window).width()>1025) {
+    $(this).children('.dropdown').removeClass('active');
+    $(this).children('.dropdown').addClass('hidden'); //make the dropdown of this element visible
+  }else{}
+});
+
+$('#hamburger-menu').click(function() {//when mouse over the class parent_dropdown
+    $('#navbar-info-wrapper').toggle();
+    $('#navbar-link .link').toggle();
+});
+
+$('#navbar-link .parent_dropdown > span').click(function() {//when mouse over the class parent_dropdown
+  if ($(window).width()<1025) {
+    $(this).next().toggleClass('fa-chevron-up');
+    $(this).next().next().toggle(400);
+     //make the dropdown of this element visible
+  }
 })
+
+
+
 
 // part to lead the behaviour of the navbar-wrapper
 $(window).scroll(function(){
   if($(this).scrollTop() > 20){
     $('#navbar-wrapper').addClass('fixed');
-  }else{
+  }else if($(this).scrollTop() < 20){
     $('#navbar-wrapper').removeClass('fixed');
   }
 });
