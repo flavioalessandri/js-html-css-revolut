@@ -165,7 +165,7 @@ header a, header span{
 
 #navbar-link .link .dropdown > li{
 display: inline-block;
-white-space: nowrap; //use this not to break the line
+white-space: nowrap; /* use this not to break the line */
 padding: 0.8rem 1.6rem;
 }
 
