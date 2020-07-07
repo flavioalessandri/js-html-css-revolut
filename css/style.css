@@ -5,6 +5,14 @@
   font-family: 'Lato';
 }
 
+@font-face {
+font-family: 'Basier Circle Regular';
+font-style: normal;
+font-weight: normal;
+src: local('Basier Circle Regular'), url('../font/BasierCircle-Regular.woff') format('woff');
+}
+
+
 coloridaconfermare{
   /* color: 	rgb(182, 176, 170); */
   /* color:rgb(25, 28, 31); */
@@ -14,6 +22,15 @@ body{
   font-family: 'Roboto', sans-serif;
   color: 		rgb(172, 171, 172);
   font-weight: 500;
+}
+
+h1{
+  font-family: 'Basier Circle Regular';
+  text-align: left;
+  font-size: 76px;
+  line-height: 87px;
+  color:rgb(25, 28, 31)
+
 }
 
 header a, header span{
@@ -59,13 +76,18 @@ header a, header span{
 
 /* fixed top navbar style */
 #navbar-wrapper{
-  position: fixed;
-  top:64px;
-  left:0;
   width: 100vw;
-  height: 128px;
+  height: 88px;
   padding-top:28px;
   padding-bottom: 28px;
+  background-color: lightgreen;
+}
+
+.fixed{
+  position: fixed;
+  top:0;
+  left:0;
+  box-shadow: rgba(25, 28, 31, 0.04) 0px 8px 16px, rgba(25, 28, 31, 0.04) 0px -1px 0px;
 }
 
 /* Navbar-content contains all the navbar content divided in three Sections */
@@ -84,7 +106,7 @@ header a, header span{
 }
 
 #navbar-logo > a > img{
-  width:100%;
+  width:104px;
 }
 
 /* Second Section---------Navbar-links */
@@ -142,6 +164,8 @@ header a, header span{
 }
 
 #navbar-link .link .dropdown > li{
+display: inline-block;
+white-space: nowrap; //use this not to break the line
 padding: 0.8rem 1.6rem;
 }
 
@@ -164,9 +188,115 @@ padding: 0.8rem 1.6rem;
   display:block;
 }
 
+.hamburger-menu{
+  display:none;
+}
+
+#jumbotron{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 180px;
+}
+
+#jumbotron img{
+  width:499;
+  height:610px;
+}
+
+
+
+
 
 /* ...HOVER....... */
 
 header a:hover, header span:hover{
   color: rgb(25, 28, 31);
+}
+
+
+
+@media all and (max-width:1000px) {
+
+
+  #navbar-info{
+    position: fixed;
+    width: 100%;
+    height:96px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(172, 171, 172);
+    background-color: rgb(243, 244, 246);
+    z-index: 8;
+  }
+
+  /* fixed top navbar style */
+  #navbar-wrapper{
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100vw;
+    height: 128px;
+    padding-top:28px;
+    padding-bottom: 28px;
+    z-index: 10;
+    background-color: white;
+  }
+
+  #hamburger-menu{
+    position: relative;
+    right:0px;
+    top:0px;
+    width:30px;
+    height:30px;
+    z-index: 999;
+  }
+  .hamb-line01{
+    background-color: red;
+    position: absolute;
+    right:5px;
+    top:5px;
+    width:20px;
+    height:2px;
+    border-radius: 3px;
+  }
+  .hamb-line02{
+    background-color: red;
+    position: absolute;
+    right:5px;
+    top:14px;
+    width:20px;
+    height:2px;
+    border-radius: 3px;
+  }
+
+  /* Navbar-content contains all the navbar content divided in three Sections */
+  #navbar-content{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+
+  #navbar-link{
+    display: flex;
+    margin-left:0;
+    width:100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+
+
+  #navbar-button{
+    position:fixed;
+    bottom:50px;
+    left:50%;
+    transform: translateX(-50%);
+    z-index: 10;
+  }
+
 }
