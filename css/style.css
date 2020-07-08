@@ -49,22 +49,40 @@ header a, header span{
   padding-left: 40px;
 }
 
+
+
+/* elementi con display none e display block */
+
+#navbar-info-wrapper{
+  display:block;
+}
+
+#navbar-link-wrapper {
+  display:block;
+}
+
+#navbar-link .parent_dropdown .fa-chevron-down{
+  display:none;
+}
+
+.hamburger-menu{
+  display:none;
+}
+
 .hidden{
   display:none;
 }
 
-.show{
-  display: block;!important
-}
-
-.fa-chevron-down{
-  display:none;
-}
-
-/* fixed top navbar style */
-#navbar-info-wrapper{
+.active {
   display:block;
 }
+
+.show{
+  display: block;
+}
+
+
+
 
 #navbar-info{
   width: 100%;
@@ -126,12 +144,19 @@ header a, header span{
 }
 
 /* Second Section---------Navbar-links */
+
+
 #navbar-link{
   margin-left:40px;
-  width:90%;
+  width:100%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
+}
+
+#navbar-link-wrapper {
+  display: block;
+  width:100%;
 }
 
 #navbar-link .link {
@@ -148,17 +173,13 @@ header a, header span{
   left:0;
 }
 
-#navbar-link .link .parent_dropdown:hover{
-  cursor: pointer;
-}
+
 
 #navbar-link .parent_dropdown>span{
   padding:30px 30px;
 }
 
-#navbar-link .parent_dropdown>i{
-  display:none;
-}
+
 
 #navbar-link .dropdown{
   position: absolute;
@@ -193,13 +214,8 @@ padding: 0.8rem 1.6rem;
   border:none;
 }
 
-.active {
-  display:block;
-}
 
-.hamburger-menu{
-  display:none;
-}
+
 
 #jumbotron{
   display: flex;
@@ -224,8 +240,12 @@ input{
 
 /* ...HOVER....... */
 
-header a:hover, header span:hover{
+header a:hover, header span:hover, .parent_dropdown > i:hover{
   color: rgb(25, 28, 31);
+}
+
+#navbar-link .link .parent_dropdown:hover, .parent_dropdown > i:hover{
+  cursor: pointer;
 }
 
 /* ----MEDIA QUERY------------------------------ */
@@ -247,15 +267,39 @@ p{
   color: rgb(139, 149, 158);
 }
 
+/* elementi con display block / none */
+
+#navbar-link-wrapper {
+  display: none;
+}
+
 #navbar-info-wrapper{
   display: none;
 }
+
+#navbar-info .link:last-of-type{
+  display:none;
+}
+
+#navbar-link .parent_dropdown .fa-chevron-down{
+  display:block;
+}
+
+#navbar-link .link {
+  width: 100%;
+
+}
+
+
+
+
+
+
 
 #navbar-info{
   position: fixed;
   width: 100%;
   height:96px;
-  display: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -264,9 +308,6 @@ p{
   z-index: 11;
 }
 
-#navbar-info .link:last-of-type{
-  display:none;
-}
 
 /* fixed top navbar style */
 #navbar-wrapper{
@@ -285,37 +326,39 @@ p{
   position: fixed;
   padding-top: 20px;
   top:96px;
-  left:40px;
+  left:0px;
+  padding-left: 40px;
   display: flex;
   margin-left:0;
   width:100%;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  background-color: white;
+  background-color: lightgreen;
 }
 
-#navbar-link .link {
-  width: 100%;
-  display: none;
-}
 
-#navbar-link .link .parent_dropdown{
-  position:static;
-}
 
 #navbar-link .parent_dropdown>i{
-  padding-top: 12px;
+  position: absolute;
+  top: 0;
+  left: 0px;
+  padding-top: 14px;
+  padding-bottom: 14px;
   font-size: 12px;
-  display:inline-block;
+  display: inline-block;
   line-height: 1.65;
+  z-index: 99;
+  padding-left: 85%;
+
 }
+
+
 
 #navbar-link .parent_dropdown>span{
   padding: 10px 30px;
   display: inline-block;
   width: 85%;
-  background-color: red;
   line-height: 1.65;
 }
 
@@ -327,35 +370,44 @@ p{
   padding: 0.75rem 0px;
 }
 
-.fa-chevron-down{
-  display:block;
-}
-
 #hamburger-menu{
   position: fixed;
   right:40px;
   top:30px;
   width:30px;
   height:30px;
-  background-color: lightgreen;
   z-index: 1000;
 }
 
-.hamb-line01{
-  background-color: red;
+.anim1{
+  transform-origin: right;
+  transform: rotate(-45deg);
+}
+.anim2{
+  transform-origin: left;
+  transform: rotate(45deg);
+}
+
+#hamb-line01{
+  transform-origin: right;
+  /* transform: rotate(0deg); */
+  transition: .2s;
+  background-color: rgb(25, 28, 31);
   position: absolute;
   right:5px;
   top:5px;
-  width:20px;
+  width:18px;
   height:2px;
   border-radius: 3px;
 }
-.hamb-line02{
-  background-color: red;
+#hamb-line02{
+  transform-origin: right;
+  transition: .2s;
+  background-color: rgb(25, 28, 31);
   position: absolute;
   right:5px;
-  top:14px;
-  width:20px;
+  top:18px;
+  width:18px;
   height:2px;
   border-radius: 3px;
 }
@@ -392,17 +444,15 @@ p{
   height:auto;
 }
 
-.square{
-  position: fixed;
-  z-index: 1000;
-  width:50px;
-  height:50px;
-  background-color: green;
-}
-
+/* ----MEDIA QUERY------------------------------ */
 @media all and (min-width:1026px) {
 
-  #navbar-link .link {
-    display: block!important;
+
+  #navbar-info-wrapper{
+    display:block!important;
+  }
+
+  #navbar-link-wrapper {
+    display:block!important;
   }
 }
