@@ -6,15 +6,15 @@
 }
 
 @font-face {
-font-family: 'Basier Circle Regular';
-font-style: normal;
-font-weight: normal;
-src: local('Basier Circle Regular'), url('../font/BasierCircle-Regular.woff') format('woff');
+  font-family: 'Basier Circle Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Basier Circle Regular'), url('../font/BasierCircle-Regular.woff') format('woff');
 }
 
 body{
   font-family: 'Roboto', sans-serif;
-  color: 		rgb(172, 171, 172);
+  color: rgb(172, 171, 172);
   font-weight: 500;
 }
 
@@ -38,11 +38,9 @@ text-align: left;
 color: rgb(139, 149, 158);
 }
 
-
-
 header a, header span{
   text-decoration: none;
-  color: 		rgb(172, 171, 172);
+  color: 	rgb(172, 171, 172);
   transition: 0.1s;
 }
 
@@ -57,16 +55,6 @@ header a, header span{
 
 /* elementi con display none e display block */
 
-
-
-.visibile{
-  display:block;
-}
-
-.invisibile{
-  display:none;
-}
-
 .hidden{
   display:none;
 }
@@ -75,15 +63,6 @@ header a, header span{
   display:block;
 }
 
-
-/* #navbar-info-wrapper{
-  display:block;
-} */
-
-/* #navbar-link-wrapper {
-  display:block;
-} */
-
 #navbar-link .parent_dropdown .fa-chevron-down{
   display:none;
 }
@@ -91,9 +70,6 @@ header a, header span{
 .hamburger-menu{
   display:none;
 }
-
-
-
 
 #navbar-info{
   width: 100%;
@@ -125,7 +101,7 @@ header a, header span{
   height: 88px;
   padding-top:28px;
   padding-bottom: 28px;
-  /* background-color: lightgreen; */
+
 }
 
 .fixed{
@@ -155,6 +131,10 @@ header a, header span{
 }
 
 /* Second Section---------Navbar-links */
+#navbar-link-wrapper {
+  width:100%;
+}
+
 #navbar-link{
   margin-left:40px;
   width:100%;
@@ -162,15 +142,6 @@ header a, header span{
   justify-content: flex-start;
   align-items: center;
 }
-
-#navbar-link-wrapper {
-  /* display: block; */
-  width:100%;
-}
-
-/* #navbar-link .link {
-  display: block;
-} */
 
 #navbar-link .link:last-of-type {
   flex-grow: 1;
@@ -204,7 +175,6 @@ padding: 0.8rem 1.6rem;
 }
 
 /* Third Section---------Navbar-button */
-
 .btn{
   background-color: rgb(25, 28, 31);
   font-size: 17px;
@@ -220,7 +190,6 @@ padding: 0.8rem 1.6rem;
 }
 
 /* Jumbotron------------------ */
-
 #jumbotron{
   display: flex;
   justify-content: space-between;
@@ -253,8 +222,6 @@ header a:hover, header span:hover, .parent_dropdown > i:hover{
 }
 
 /* ----MEDIA QUERY------------------------------ */
-/* ----MEDIA QUERY------------------------------ */
-/* ----MEDIA QUERY------------------------------ */
 @media all and (max-width:1025px) {
 
   .visibilita{
@@ -277,31 +244,13 @@ p{
   color: rgb(139, 149, 158);
 }
 
-/* elementi con display block / none */
-
-/* #navbar-link-wrapper {
-  display: block;
-} */
-
-.visibile{
+.invisible{
   display:none;
 }
 
-.invisibile{
-  /* background-color: yellow; */
+.visible{
   display:block;
 }
-
-/* .hidden{
-  background-color: yellow;
-  display:inherit;
-} */
-
-
-/*
-#navbar-info-wrapper{
-  display: none;
-} */
 
 #navbar-info .link:last-of-type{
   display:none;
@@ -330,19 +279,16 @@ p{
 /* fixed top navbar style */
 #navbar-wrapper{
   position: static;
-  /* top:0;
-  left:0; */
   width: 100vw;
   height: 128px;
   padding-top:28px;
   padding-bottom: 28px;
-  /* z-index: 12; */
   background-color: white;
 }
 
 #navbar-link{
   position: fixed;
-  padding-top: 20px;
+  /* padding-top: 20px; */
   top:96px;
   left:0px;
   padding-left: 40px;
@@ -354,8 +300,6 @@ p{
   align-items: flex-start;
   background-color: white;
 }
-
-
 
 #navbar-link .parent_dropdown>i{
   position: absolute;
@@ -389,9 +333,8 @@ p{
 #hamburger-menu{
   width: 30px;
   height: 30px;
-  /* z-index: 1000; */
-  /* background-color: red; */
 }
+
 .hamb-position-relative{
   position: relative;
   left: 95%;
@@ -405,18 +348,17 @@ p{
   z-index: 1000;
 }
 
-.anim1{
+.hamb-anim1{
   transform-origin: right;
   transform: rotate(-45deg);
 }
-.anim2{
+.hamb-anim2{
   transform-origin: left;
   transform: rotate(45deg);
 }
 
 #hamb-line01{
   transform-origin: right;
-  /* transform: rotate(0deg); */
   transition: .2s;
   background-color: rgb(25, 28, 31);
   position: absolute;

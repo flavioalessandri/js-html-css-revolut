@@ -1,56 +1,75 @@
 $(document).ready(function(){ //open jquery library when DOM is fully loaded
 
-// Mediaquery max-width 1025px
-// use the hamburger menu to show the dropdown items
+  // For Mediaquery max-width 1025px
+  // use the hamburger menu to show the dropdown items
+  hamburgerDropdown();
 
-var hamburger_menu = $('#hamburger-menu');
-hamburger_menu.click(function() {//when mouse over the class parent_dropdown
+  // use the arrow to show the dropdown menu on click
+  onClickDropdown();
 
-    $(this).toggleClass('hamb-position-fixed');
-    $('#navbar-info-wrapper').toggleClass('invisibile');
-    $('#navbar-link-wrapper').toggleClass('invisibile');
-    $('#navbar-link .link ').toggleClass('invisibile');
-    $("#hamb-line01").toggleClass("anim1");
-    $("#hamb-line02").toggleClass("anim2");
+  // function when mouse enter on the parent-dropdown
+  mouseEnterDropdown();
+
+// function when mouse leave the parent-dropdown
+  mouseLeaveDropdown();
+
+
 });
 
-// Mediaquery max-width 1025px
-// use the arrow to show the dropdown menu on click
+// My Function--------------------------
 
-  $('#navbar-link .parent_dropdown > i').click(function() {//when mouse over the class parent_dropdown
+function hamburgerDropdown() {
+  var hamburger_menu = $('#hamburger-menu');
+  var hamburger_lineup = $("#hamb-line01");
+  var hamburger_linedwn = $("#hamb-line02");
+  var navbar_info_wrapper =$('#navbar-info-wrapper');
+  var navbar_link_wrapper =$('#navbar-link-wrapper');
+  var parent_dropdown_wrapper = $('#navbar-link .link ');
 
-      $(this).toggleClass('fa-chevron-up'); //arrow change the position to up after click
-      $(this).next().toggleClass('invisibile');
-      // $('#navbar-link .parent_dropdown > i').next().removeClass('hidden');
-
+  hamburger_menu.click(function() {
+    $(this).toggleClass('hamb-position-fixed');
+    navbar_info_wrapper.toggleClass('visible');
+    navbar_link_wrapper.toggleClass('visible');
+    parent_dropdown_wrapper.toggleClass('visible');
+    hamburger_lineup.toggleClass("hamb-anim1");
+    hamburger_linedwn.toggleClass("hamb-anim2");
   });
+}
 
-  // var for container of dropdown list
+// end of function......................
+
+function onClickDropdown(){
+  var arrow_dropdown =   $('#navbar-link .parent_dropdown > i');
+  arrow_dropdown.click(function() {//when mouse over the class parent_dropdown
+      $(this).toggleClass('fa-chevron-up'); //arrow change the position to up after click
+      $(this).next().toggleClass('visible');
+  });
+}
+
+// end of function......................
+
+function mouseEnterDropdown(){
   var parent_dropdown =  $('#navbar-content .link .parent_dropdown');
-  console.log(parent_dropdown);
-
-  // var for  dropdown list
-  var dropdown= $('#navbar-content ul.dropdown' );
-  console.log(dropdown);
 
   // function when mouse enter on the parent-dropdown
   parent_dropdown.on('mouseenter', function() {//when mouse over the class parent_dropdown
-
       $(this).children('span').addClass('color');
       $(this).children('.dropdown').addClass('active');
       $(this).children('.dropdown').removeClass('hidden'); //make the dropdown of this element visible
-
   });
+}
 
-// function when mouse leave the parent-dropdown
-  parent_dropdown.on('mouseleave', function() {//when mouse over the class parent_dropdown
+// end of function......................
 
-      $(this).children('span').removeClass('color');
-      $(this).children('.dropdown').removeClass('active');
-      $(this).children('.dropdown').addClass('hidden'); //make the dropdown of this element visible
+function mouseLeaveDropdown(){
+  var parent_dropdown =  $('#navbar-content .link .parent_dropdown');
 
-  });
+  // function when mouse leave the parent-dropdown
+    parent_dropdown.on('mouseleave', function() {//when mouse over the class parent_dropdown
+        $(this).children('span').removeClass('color');
+        $(this).children('.dropdown').removeClass('active');
+        $(this).children('.dropdown').addClass('hidden'); //make the dropdown of this element visible
+    });
+  }
 
-
-
-});
+// end of function......................
